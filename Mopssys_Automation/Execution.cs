@@ -25,8 +25,23 @@ namespace Mopssys_Automation
 			#region Steps
 			loginPage.Login("https://mops4.mopssys.com/", "shamiteh1","mopssys");
 
-			#endregion
-		}
 
-	}
+            #endregion
+
+        [TestMethod]
+        public void InvalidLoginTC()
+        {
+            #region Initializations
+            LoginPage loginPage = new LoginPage();
+            loginPage.driver = this.driver;
+            #endregion
+
+            #region Steps
+            loginPage.Login("https://mops4.mopssys.com/", "shamiteh1", "mopssys");
+
+
+            #endregion
+        }
+
+    }
 }
