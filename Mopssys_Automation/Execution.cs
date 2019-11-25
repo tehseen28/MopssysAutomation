@@ -14,22 +14,8 @@ namespace Mopssys_Automation
 	{
 		IWebDriver driver = new ChromeDriver();
 
-		[TestMethod]
-		public void LoginTC()
-		{
-			#region Initializations
-			LoginPage loginPage = new LoginPage();
-			loginPage.driver = this.driver;
-			#endregion
-
-			#region Steps
-			loginPage.Login("https://mops4.mopssys.com/", "shamiteh1","mopssys");
-
-
-            #endregion
-
         [TestMethod]
-        public void InvalidLoginTC()
+        public void LoginTC()
         {
             #region Initializations
             LoginPage loginPage = new LoginPage();
@@ -38,6 +24,23 @@ namespace Mopssys_Automation
 
             #region Steps
             loginPage.Login("https://mops4.mopssys.com/", "shamiteh1", "mopssys");
+            #endregion
+        }
+
+
+
+
+        [TestMethod]
+        public void InvalidLoginTC()
+        {
+            #region Initializations
+            LoginPage loginPage = new LoginPage();
+            loginPage.driver = this.driver;
+            loginPage.driver.Close();
+            #endregion
+
+            #region Steps
+            loginPage.Login("https://mops4.mopssys.com/", "shamiteh", "mopssys");
 
 
             #endregion

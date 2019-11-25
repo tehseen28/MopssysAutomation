@@ -23,6 +23,7 @@ namespace Mopssys_Automation
 			Thread.Sleep(10000);
 			string welcomeText = driver.FindElement(By.CssSelector("#dashboardHeader")).Text;
             Assert.AreEqual("Tehseen dashboard", welcomeText );
+            Assert.AreNotEqual("");
             driver.Close();
 		}
 	}
